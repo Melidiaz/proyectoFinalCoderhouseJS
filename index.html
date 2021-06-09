@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+  <title>TELEMEDICINA S.A.</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TELEMEDICINA S.A</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">
+          Carrito
+        </button>
+      </div>
+    </div>
+  </nav>    
+
+  <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Carrito de Compras</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+          <div class="contenedorFlex">
+          <div class="contenedorEncabezado">
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight">ITEM</div>
+            <div class="p-2 bd-highlight">Cantidad</div>
+            <div class="p-2 bd-highlight">Precio</div>
+            <div class="p-2 bd-highlight">Tachito</div>
+          </div>
+        </div>
+      </div>
+
+
+          <div>
+            <ul id="lista">
+            </ul>
+        </div>
+        
+  <div class="modal-footer">
+        <h3>Subtotal</h3>
+        <div class="container-fluid" style="background-color: gray;">
+          <div class="row">
+              <p class="d-inline">El total del carrito es: $</p>
+              <p class="d-inline" id="totalDelCarrito"></p>
+          </div>
+        </div>
+        <div>
+          <button id="pagar"> PAGAR</button>
+        </div>
+        <br>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- /.col-lg-3 -->
+
+      <div>
+        <h1 id="titulo" class="titulo"> Bienvenidos al e-shopp de Telemedicina S.A. </h1>
+        <p>Contamos con aparatología clasificada por especialidad médica</p>
+      </div>
+
+
+        <div class="row" id="destacados">
+        </div>
+
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Desarrollado por Melisa Diaz</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script src="modal.js"></script>
+
+</body>
+
+</html>
