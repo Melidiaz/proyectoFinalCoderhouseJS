@@ -1,3 +1,5 @@
+// Variables
+
 let carritoLocal = JSON.parse(localStorage.getItem('carritoGuardado')) || []
 let acumulador = ``;
 let totalCarrito = 0;
@@ -44,16 +46,16 @@ if(carritoLocal.length>0){
 }
 
 //agregamos al array del carrito, y llamamos a mostrar el contenido
-function agregarAlCarrito(producto){
-
-// siguiendo lo del after de conrado: para que no se repitan los productos!
+function agregarAlCarrito(producto) {
 
     // let producto = listacompra.find(el => el.id == producto)
 
     // if (producto) {
     //     producto.cantidad += 1
     // } else {
-
+    //     if (producto) {
+    //         listacompra.push(producto);
+    //     }
     // }
 
 // lo mio
@@ -71,7 +73,7 @@ function agregarAlCarrito(producto){
     totalCarrito.innerText = listacompra.reduce((acumulador, producto) => acumulador += (producto.precio * producto.cantidad), 0);
 }
 
-//sacamos del array del carrito, y llamamos a mostrar el contenido. Esta es la función para eliminar un item del carrito
+//sacamos del array del carrito, y llamamos a mostrar el contenido. También para eliminar un item del carrito
 function borrarProducto(articulo){
 
     let productoAEliminar = listacompra.find(producto => producto.nombre == articulo.nombre)
@@ -86,7 +88,7 @@ function borrarProducto(articulo){
     
 }
 
-//mostrar Array del carrito (es la que actualiza el carrito)
+//mostrar (actualizar) Array del carrito
 function mostrarEnElCarrito(listacompra){
     let acum = '';
     for (let i = 0; i < listacompra.length; i++) {
@@ -116,9 +118,9 @@ botonVaciar.addEventListener("click", ()=> {
     localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
  })
 
-// Función cuando se finaliza compra 
+//Función cuando se finaliza compra 
 
- $('#botonPagar').on("click", myFunction);
+$('#botonPagar').on("click", myFunction);
 
 function myFunction() {
   alert ("Muchas gracias por su compra!")
