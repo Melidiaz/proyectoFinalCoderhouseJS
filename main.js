@@ -1,9 +1,6 @@
 let carritoLocal = JSON.parse(localStorage.getItem('carritoGuardado')) || []
-
 let acumulador = ``;
 let totalCarrito = 0;
-
-// VER ESTE 
 const botonVaciar = document.getElementById("botonVaciar");
 const contadorCarrito = document.getElementById("contadorCarrito");
 
@@ -76,6 +73,7 @@ function agregarAlCarrito(producto){
 
 //sacamos del array del carrito, y llamamos a mostrar el contenido. Esta es la función para eliminar un item del carrito
 function borrarProducto(articulo){
+
     let productoAEliminar = listacompra.find(producto => producto.nombre == articulo.nombre)
     let indice = listacompra.indexOf(productoAEliminar)
     listacompra.splice(indice, 1)
@@ -88,7 +86,7 @@ function borrarProducto(articulo){
     
 }
 
-//mostrar Array del carrito
+//mostrar Array del carrito (es la que actualiza el carrito)
 function mostrarEnElCarrito(listacompra){
     let acum = '';
     for (let i = 0; i < listacompra.length; i++) {
@@ -97,7 +95,7 @@ function mostrarEnElCarrito(listacompra){
         <div class="d-flex bd-highlight">
         <div class="p-2 flex-grow-1 bd-highlight">${listacompra[i].nombre}</div>
         <div class="p-2 bd-highlight">$${listacompra[i].precio}</div>
-        <div class="p-2 bd-highlight">${listacompra[i].stock}<type="button" class="btn btn-light btn-sm"><img class="iconoplus" src="iconoplus.png"></div>
+        <div class="p-2 bd-highlight">${listacompra[i].stock}</div>
         <div class="p-2 bd-highlight"><type="button" class="btn btn-light btn-sm" button onclick='borrarProducto(${JSON.stringify(listacompra[i])})'><img class="iconotrash" src="iconotrash.png"></button></div>
       </div>
        </li>`
@@ -106,16 +104,26 @@ function mostrarEnElCarrito(listacompra){
     document.getElementById("lista").innerHTML = acum;
 }
 
+// VER ESTA FUNCION QUE quede en 0 el TOTAL A PAGAR
+function vaciarCarrito() {
+    listacompra = [];
+    mostrarEnElCarrito(listacompra);
+}
 
-// VER ESTA FUNCION QUE NO ANDA PARA ELIMINAR TODO
 botonVaciar.addEventListener("click", ()=> {
     vaciarCarrito();
+
+    localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
  })
 
+// Función cuando se finaliza compra 
 
  $('#botonPagar').on("click", myFunction);
 
 function myFunction() {
   alert ("Muchas gracias por su compra!")
+  vaciarCarrito()
+
+  localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
 }
 
