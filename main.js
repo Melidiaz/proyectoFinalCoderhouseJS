@@ -26,7 +26,7 @@ for (let i = 0; i < BaseDeDatosProductos.length; i++) {
     </div>
     <div class="card-footer">
         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-        <button onclick='agregarAlCarrito(${JSON.stringify(BaseDeDatosProductos[i])})'>Agregar al carrito</button>
+        <button type="button" class="btn btn-primary" onclick='agregarAlCarrito(${JSON.stringify(BaseDeDatosProductos[i])})' >Agregar al carrito</button>
      </div>
     </div>
 </div>`;
