@@ -54,7 +54,7 @@ function agregarAlCarrito(producto){
     localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
 }
 
-//sacamos del array del carrito, y llamamos a mostrar el contenido
+//sacamos del array del carrito, y llamamos a mostrar el contenido. Esta es la función para eliminar un item del carrito
 function borrarProducto(articulo){
     let productoAEliminar = listacompra.find(producto => producto.nombre == articulo.nombre)
     let indice = listacompra.indexOf(productoAEliminar)
