@@ -3,12 +3,15 @@ let carritoLocal = JSON.parse(localStorage.getItem('carritoGuardado')) || []
 let acumulador = ``;
 let totalCarrito = 0;
 
-const ProductoUno = {nombre: "Dematología", precio: 3000, imagen:'image0.jpg'};
-const ProductoDos = {nombre: "Espirómetro", precio: 4500, imagen: 'image1.jpg'};
-const ProductoTres = {nombre: "Termómetro", precio: 3000, imagen: 'image2.jpg'};
-const ProductoCuatro = {nombre: "Odontología", precio: 5000, imagen: 'image3.jpg'};
-const ProductoCinco = {nombre: "Electrocardiograma", precio: 5000, imagen: 'image4.jpg'};
-const ProductoSeis = {nombre: "Tensiómetro", precio: 4000, imagen: 'image5.jpg'};
+// VER ESTE 
+const botonVaciar = document.getElementById("botonVaciar");
+
+const ProductoUno = {nombre: "Dematología", precio: 3000, imagen:'image0.jpg', stock: 20};
+const ProductoDos = {nombre: "Espirómetro", precio: 4500, imagen: 'image1.jpg', stock: 30};
+const ProductoTres = {nombre: "Termómetro", precio: 3000, imagen: 'image2.jpg', stock: 40};
+const ProductoCuatro = {nombre: "Odontología", precio: 5000, imagen: 'image3.jpg', stock: 15};
+const ProductoCinco = {nombre: "Electrocardiograma", precio: 5000, imagen: 'image4.jpg', stock: 20};
+const ProductoSeis = {nombre: "Tensiómetro", precio: 4000, imagen: 'image5.jpg', stock: 30};
 
 const BaseDeDatosProductos = [ProductoUno, ProductoDos, ProductoTres, ProductoCuatro, ProductoCinco, ProductoSeis];
 
@@ -44,6 +47,19 @@ if(carritoLocal.length>0){
 
 //agregamos al array del carrito, y llamamos a mostrar el contenido
 function agregarAlCarrito(producto){
+
+// siguiendo lo del after de conrado:
+
+    // let producto = listacompra.find(el => el.id == producto)
+
+    // if (producto) {
+    //     producto.cantidad += 1
+    // } else {
+
+    // }
+
+// lo mio
+
     listacompra.push(producto);
         
     mostrarEnElCarrito(listacompra)
@@ -70,13 +86,12 @@ function borrarProducto(articulo){
 //mostrar Array del carrito
 function mostrarEnElCarrito(listacompra){
     let acum = '';
-    
     for (let i = 0; i < listacompra.length; i++) {
         acum +=`
         <li>
         <div class="d-flex bd-highlight">
         <div class="p-2 flex-grow-1 bd-highlight">${listacompra[i].nombre}</div>
-        <div class="p-2 bd-highlight">Cantidad</div>
+        <div class="p-2 bd-highlight">${listacompra[i].stock}</div>
         <div class="p-2 bd-highlight">${listacompra[i].precio}</div>
         <div class="p-2 bd-highlight"><button onclick='borrarProducto(${JSON.stringify(listacompra[i])})'>Tachito</button></div>
       </div>
@@ -85,3 +100,10 @@ function mostrarEnElCarrito(listacompra){
 
     document.getElementById("lista").innerHTML = acum;
 }
+
+
+// VER ESTA FUNCION QUE NO ANDA
+botonVaciar.addEventListener("click", ()=> {
+    vaciarCarrito();
+ })
+
