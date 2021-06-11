@@ -10,7 +10,7 @@ const ProductoUno = {nombre: "Dematología", precio: 3000, imagen:'image0.jpg', 
 const ProductoDos = {nombre: "Espirómetro", precio: 4500, imagen: 'image1.jpg', stock: 30};
 const ProductoTres = {nombre: "Termómetro", precio: 3000, imagen: 'image2.jpg', stock: 40};
 const ProductoCuatro = {nombre: "Odontología", precio: 5000, imagen: 'image3.jpg', stock: 15};
-const ProductoCinco = {nombre: "Electrocardiograma", precio: 5000, imagen: 'image4.jpg', stock: 20};
+const ProductoCinco = {nombre: "Electros", precio: 5000, imagen: 'image4.jpg', stock: 20};
 const ProductoSeis = {nombre: "Tensiómetro", precio: 4000, imagen: 'image5.jpg', stock: 30};
 
 const BaseDeDatosProductos = [ProductoUno, ProductoDos, ProductoTres, ProductoCuatro, ProductoCinco, ProductoSeis];
@@ -58,7 +58,7 @@ function agregarAlCarrito(producto) {
     //     }
     // }
 
-// lo mio
+// lo mio que funciona:
 
     listacompra.push(producto);
         
