@@ -5,6 +5,7 @@ let totalCarrito = 0;
 
 // VER ESTE 
 const botonVaciar = document.getElementById("botonVaciar");
+const contadorCarrito = document.getElementById("contadorCarrito");
 
 const ProductoUno = {nombre: "Dematología", precio: 3000, imagen:'image0.jpg', stock: 20};
 const ProductoDos = {nombre: "Espirómetro", precio: 4500, imagen: 'image1.jpg', stock: 30};
@@ -48,7 +49,7 @@ if(carritoLocal.length>0){
 //agregamos al array del carrito, y llamamos a mostrar el contenido
 function agregarAlCarrito(producto){
 
-// siguiendo lo del after de conrado:
+// siguiendo lo del after de conrado: para que no se repitan los productos!
 
     // let producto = listacompra.find(el => el.id == producto)
 
@@ -68,6 +69,9 @@ function agregarAlCarrito(producto){
     document.getElementById("totalDelCarrito").innerHTML = totalCarrito;
 
     localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
+
+    contadorCarrito.innerText = listacompra.length;
+    totalCarrito.innerText = listacompra.reduce((acumulador, producto) => acumulador += (producto.precio * producto.cantidad), 0);
 }
 
 //sacamos del array del carrito, y llamamos a mostrar el contenido. Esta es la función para eliminar un item del carrito
@@ -81,6 +85,7 @@ function borrarProducto(articulo){
 
     mostrarEnElCarrito(listacompra);
     localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
+    
 }
 
 //mostrar Array del carrito
@@ -91,9 +96,9 @@ function mostrarEnElCarrito(listacompra){
         <li>
         <div class="d-flex bd-highlight">
         <div class="p-2 flex-grow-1 bd-highlight">${listacompra[i].nombre}</div>
-        <div class="p-2 bd-highlight">${listacompra[i].stock}</div>
-        <div class="p-2 bd-highlight">${listacompra[i].precio}</div>
-        <div class="p-2 bd-highlight"><button onclick='borrarProducto(${JSON.stringify(listacompra[i])})'>Tachito</button></div>
+        <div class="p-2 bd-highlight">$${listacompra[i].precio}</div>
+        <div class="p-2 bd-highlight">${listacompra[i].stock}<type="button" class="btn btn-light btn-sm"><img class="iconoplus" src="iconoplus.png"></div>
+        <div class="p-2 bd-highlight"><type="button" class="btn btn-light btn-sm" button onclick='borrarProducto(${JSON.stringify(listacompra[i])})'><img class="iconotrash" src="iconotrash.png"></button></div>
       </div>
        </li>`
     }
@@ -102,8 +107,15 @@ function mostrarEnElCarrito(listacompra){
 }
 
 
-// VER ESTA FUNCION QUE NO ANDA
+// VER ESTA FUNCION QUE NO ANDA PARA ELIMINAR TODO
 botonVaciar.addEventListener("click", ()=> {
     vaciarCarrito();
  })
+
+
+ $('#botonPagar').on("click", myFunction);
+
+function myFunction() {
+  alert ("Muchas gracias por su compra!")
+}
 
