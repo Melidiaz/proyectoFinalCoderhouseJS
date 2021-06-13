@@ -2,6 +2,25 @@
     font-size: 45px;
     padding: auto;
     margin-top: 10px;
+    font-family: 'Mate SC', serif;
+}
+
+.modal-header {
+   font-family: 'Mate SC', serif;
+   background-color: #EDEDED;
+}
+
+.contenedorEncabezado {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.modal-footer {
+    font-family: 'Mate SC', serif;
+    font-size: 22px;
+}
+
+.modal-body {
+    font-family: 'Noto Serif', serif;
 }
 
 .iconocarrito {

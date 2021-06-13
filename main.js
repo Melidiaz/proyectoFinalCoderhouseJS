@@ -6,7 +6,7 @@ let acumulador = ``;
 const botonVaciar = document.getElementById("botonVaciar");
 const contadorCarrito = document.getElementById("contadorCarrito");
 
-const ProductoUno = {nombre: "Dematología", precio: 3000, imagen:'image0.jpg', cantidad: 1};
+const ProductoUno = {nombre: "Dermatología", precio: 3000, imagen:'image0.jpg', cantidad: 1};
 const ProductoDos = {nombre: "Espirómetro", precio: 4500, imagen: 'image1.jpg', cantidad: 1};
 const ProductoTres = {nombre: "Termómetro", precio: 3000, imagen: 'image2.jpg', cantidad: 1};
 const ProductoCuatro = {nombre: "Odontología", precio: 5000, imagen: 'image3.jpg', cantidad: 1};
