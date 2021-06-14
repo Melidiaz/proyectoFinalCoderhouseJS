@@ -120,7 +120,7 @@ botonVaciar.addEventListener("click", ()=> {
 $('#botonPagar').on("click", myFunction);
 
 function myFunction() {
-  alert ("Muchas gracias por su compra!")
+    swal ( " Muchas gracias por su compra ! " );
   vaciarCarrito()
 
   localStorage.setItem('carritoGuardado',JSON.stringify(listacompra))
